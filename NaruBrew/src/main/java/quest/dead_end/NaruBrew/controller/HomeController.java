@@ -1,4 +1,4 @@
-package quest.dead_end.NaruBrew;
+package quest.dead_end.NaruBrew.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

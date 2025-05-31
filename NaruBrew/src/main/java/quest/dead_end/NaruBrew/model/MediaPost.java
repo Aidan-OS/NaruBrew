@@ -19,7 +19,7 @@ public class MediaPost
     private String filePath;
     private String mediaType;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "media_tags",
             joinColumns = @JoinColumn(name = "media_post_id"),

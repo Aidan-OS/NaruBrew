@@ -1,0 +1,65 @@
+:root {
+    --bs-body-bg: #181818;
+    --bs-body-color: #e0e0e0;
+    --bs-primary: #7e3ff2;
+    --bs-link-color: #bfaaff;
+    --bs-link-hover-color: #d2bfff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--bs-body-color);
+}
+
+/* Navbar + Footer */
+.navbar, .footer {
+    background-color: #1e1e1e;
+}
+.navbar-brand {
+    color: var(--bs-primary) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+}
+.nav-link {
+    color: var(--bs-body-color) !important;
+}
+.nav-link:hover {
+    color: var(--bs-primary) !important;
+}
+.nav-link.active {
+    color: var(--bs-primary) !important;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.footer-text {
+    color: #aaa;
+}
+
+/* Forms */
+.form-control {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+}
+.form-control::placeholder {
+    color: #aaa;
+}
+.form-control:focus {
+    background-color: #2a2a2a;
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(126, 63, 242, 0.25);
+}
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+    background-color: #6a2ed6;
+    border-color: #6a2ed6;
+}

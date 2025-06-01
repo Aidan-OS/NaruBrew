@@ -16,6 +16,13 @@ public class Tag
     @ManyToMany(mappedBy = "tags")
     private List<MediaPost> mediaList;
 
+    public Tag() {}
+
+    public Tag(String name)
+    {
+        this.name = name;
+    }
+
     public Long getId()
     {
         return(id);

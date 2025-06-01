@@ -28,7 +28,7 @@ public class MediaPost
     private List<Tag> tags;
 
     @ManyToOne
-    private User uploader;
+    private AppUser uploader;
 
     private LocalDateTime uploadedAt;
 

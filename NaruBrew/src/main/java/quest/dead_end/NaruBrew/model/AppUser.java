@@ -3,7 +3,7 @@ package quest.dead_end.NaruBrew.model;
 import jakarta.persistence.*;
 
 @Entity
-public class User
+public class AppUser
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

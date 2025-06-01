@@ -1,4 +1,4 @@
-package quest.dead_end.NaruBrew.repository;
+package quest.dead_end.NaruBrew.repositories;
 
 import quest.dead_end.NaruBrew.model.Tag;
 import org.springframework.data.jpa.repository.JpaRepository;

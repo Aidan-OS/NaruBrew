@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Narubrew - Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        main {
+            flex: 1;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 5vh auto;
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(126, 63, 242, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="/">Narubrew</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/posts">Browse Posts</a></li>
+                <li class="nav-item"><a class="nav-link" href="/upload">Upload</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="form-container">
+        <h2 class="mb-4 text-center fw-bold">Sign Up</h2>
+        <form th:action="@{/signup}" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email (optional)</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer class="text-center py-3 footer">
+    <div class="container">
+        <span class="footer-text">&copy; 2025 Narubrew. All rights reserved.</span>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -29,6 +29,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
+                        .failureUrl("/login?error=true")
                         .defaultSuccessUrl("/", true)
                         .permitAll()
                 )
@@ -39,11 +40,6 @@ public class SecurityConfig {
                 );
 
         return http.build();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService(AppUserRepository repo) {
-        return new CustomUserDetailsService(repo);
     }
 
     @Bean

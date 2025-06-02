@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- NAVBAR FRAGMENT -->
+<div th:fragment="navbar(currentUri)">
+  <nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="/">Narubrew</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a th:href="@{/posts}"
+               th:class="'nav-link' + (currentUri == '/posts' ? ' active' : '')">
+              Browse Posts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a th:href="@{/upload}"
+               th:class="'nav-link' + (currentUri == '/upload' ? ' active' : '')">
+              Upload
+            </a>
+          </li>
+          <li class="nav-item" th:if="${loggedInUsername == null}">
+            <a th:href="@{/login}"
+               th:class="'nav-link' + (currentUri == '/login' ? ' active' : '')">
+              Login
+            </a>
+          </li>
+          <li class="nav-item" th:if="${loggedInUsername == null}">
+            <a th:href="@{/signup}"
+               th:class="'nav-link' + (currentUri == '/signup' ? ' active' : '')">
+              Sign Up
+            </a>
+          </li>
+          <li class="nav-item dropdown" th:if="${loggedInUsername != null}">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false" th:text="${loggedInUsername}"></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li>
+                <form th:action="@{/logout}" method="post" style="margin: 0;">
+                  <button type="submit" class="dropdown-item bg-transparent border-0 text-start w-100">
+                    Logout
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- FOOTER FRAGMENT -->
+<div th:fragment="footer">
+  <footer class="text-center py-3 footer">
+    <div class="container">
+      <span class="footer-text">&copy; 2025 Narubrew. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

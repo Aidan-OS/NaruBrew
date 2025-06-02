@@ -63,3 +63,13 @@ html, body {
     background-color: #6a2ed6;
     border-color: #6a2ed6;
 }
+
+.dropdown-item {
+    color: var(--bs-body-color);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #2a2a2a;
+    color: var(--bs-primary);
+}

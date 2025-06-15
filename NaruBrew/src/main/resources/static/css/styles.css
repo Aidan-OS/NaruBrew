@@ -26,6 +26,44 @@ html, body {
     letter-spacing: 0.5px;
     font-size: 1.5rem;
 }
+.navbar-toggler-icon {
+    background-image: url("/images/hamburger.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5em;
+    height: 1.5em;
+}
+.navbar-toggler {
+    border: 1px solid #7e3ff2;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    transition: border-color 0.2s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: #9f6bff;
+}
+.icon-hamburger,
+.icon-close {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-hamburger {
+    background-image: url('/images/hamburger.svg');
+}
+
+.icon-close {
+    background-image: url('/images/close.svg');
+}
+
 .nav-link {
     color: var(--bs-body-color) !important;
 }

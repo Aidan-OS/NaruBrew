@@ -46,6 +46,15 @@ html, body {
     outline: none;
     border-color: #9f6bff;
 }
+/* Prevent Bootstrap from applying light blue borders on click/focus */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler[aria-expanded="true"] {
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    border-color: #7e3ff2;
+}
 .icon-hamburger,
 .icon-close {
     display: inline-block;

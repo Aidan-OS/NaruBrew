@@ -4,6 +4,7 @@
     --bs-primary: #7e3ff2;
     --bs-link-color: #bfaaff;
     --bs-link-hover-color: #d2bfff;
+    --bs-light-bg: #2a2a2a;
 }
 
 html, body {
@@ -11,9 +12,13 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #181818;
+    background-color: var(--bs-body-bg);
     font-family: 'Ubuntu', sans-serif;
     color: var(--bs-body-color);
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /* Navbar + Footer */
@@ -35,7 +40,7 @@ html, body {
     height: 1.5em;
 }
 .navbar-toggler {
-    border: 1px solid #7e3ff2;
+    border: 1px solid var(--bs-primary);
     border-radius: 4px;
     padding: 0.25rem 0.5rem;
     transition: border-color 0.2s ease;
@@ -53,7 +58,7 @@ html, body {
     box-shadow: none;
     outline: none;
     background-color: transparent;
-    border-color: #7e3ff2;
+    border-color: var(--bs-primary);
 }
 .icon-hamburger,
 .icon-close {
@@ -90,7 +95,7 @@ html, body {
 
 /* Forms */
 .form-control {
-    background-color: #2a2a2a;
+    background-color: var(--bs-light-bg);
     border: 1px solid #444;
     color: #fff;
 }
@@ -98,7 +103,7 @@ html, body {
     color: #aaa;
 }
 .form-control:focus {
-    background-color: #2a2a2a;
+    background-color: var(--bs-light-bg);
     border-color: var(--bs-primary);
     box-shadow: 0 0 0 0.2rem rgba(126, 63, 242, 0.25);
 }
@@ -117,6 +122,6 @@ html, body {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-    background-color: #2a2a2a;
+    background-color: var(--bs-light-bg);
     color: var(--bs-primary);
 }

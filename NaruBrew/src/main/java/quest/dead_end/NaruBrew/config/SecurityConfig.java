@@ -10,22 +10,21 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import quest.dead_end.NaruBrew.service.CustomUserDetailsService;
 import quest.dead_end.NaruBrew.repositories.AppUserRepository;
+import quest.dead_end.NaruBrew.config.CustomAuthEntryPoint;
 
 @Configuration
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
+    public SecurityFilterChain filterChain(HttpSecurity http, CustomAuthEntryPoint authEntryPoint) throws Exception
     {
         http.authorizeHttpRequests(auth -> auth
-                        // Public pages
                         .requestMatchers("/", "/home", "/css/**", "/images/**").permitAll()
-
-                        // Restrict upload and other future routes
                         .requestMatchers("/upload/**", "/account/**").authenticated()
-
-                        // Everything else requires login by default
                         .anyRequest().permitAll()
+                )
+                .exceptionHandling(eh -> eh
+                        .authenticationEntryPoint(authEntryPoint)
                 )
                 .formLogin(form -> form
                         .loginPage("/login")

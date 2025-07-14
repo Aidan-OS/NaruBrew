@@ -28,6 +28,10 @@ public class MediaPost
     private List<Tag> tags;
 
     @ManyToOne
+    @JoinColumn(name = "artist_id")
+    private Artist artist;
+
+    @ManyToOne
     private AppUser uploader;
 
     private LocalDateTime uploadedAt;
